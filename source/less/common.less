@@ -1,0 +1,59 @@
+html {
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+
+  min-width: 360px;
+
+  font-family: "Museo", "Arial", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: @zink;
+  text-rendering: optimizeLegibility;
+
+  background-color: #ffffff;
+
+  overflow-x: hidden;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 1000% !important;
+}
+
+a {
+  .transition();
+
+  text-decoration: none;
+  color: @red;
+
+  &:hover,
+  &:focus {
+    color: @red-light;
+    outline: 1px dotted @red-light;
+    outline-offset: 3px;
+  }
+
+  &:active {
+    color: @red-dark;
+  }
+}
+
+em, i {
+  font-style: normal !important;
+}
+
+p:empty {
+  display: none !important;
+}

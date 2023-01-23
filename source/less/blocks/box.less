@@ -1,0 +1,43 @@
+.box {
+  width: 100%;
+  padding-left: 50px;
+  padding-right: 50px;
+
+  &--wide {
+    padding-right: 35px;
+    padding-left: 35px;
+  }
+}
+
+@media (max-width: @break-point-0) {
+  .box {
+    &--wide {
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+  }
+}
+
+@media (max-width: @break-point-tablet) {
+  .box {
+    padding-left: 30px;
+    padding-right: 30px;
+
+    &--wide {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+  }
+}
+
+@media (max-width: @break-point-mobile) {
+  .box {
+    padding-left: 15px;
+    padding-right: 15px;
+
+    &--wide {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+}
