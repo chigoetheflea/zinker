@@ -72,7 +72,8 @@ gulp.task("webp", function () {
 
 gulp.task("sprite", function () {
   return gulp.src([
-      "source/img/**/icon_*.svg"
+      "source/img/**/icon_*.svg",
+      "source/img/**/logo_*.svg",
     ], {
       base: "source"
     })
