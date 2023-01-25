@@ -204,17 +204,19 @@ document.addEventListener(`DOMContentLoaded`, function() {
         evt.preventDefault();
 
         const target = document.querySelector(evt.target.dataset.target);
-        const position = target.getBoundingClientRect().top;
 
-        if (isMenuOpen(menuWrapper)) {
-          closeMenu();
+        if (target) {
+          const position = target.getBoundingClientRect().top;
+
+          if (isMenuOpen(menuWrapper)) {
+            closeMenu();
+          }
+
+          window.scrollBy({
+            top: position,
+            behavior: `smooth`,
+          });
         }
-
-        window.scrollBy({
-          top: position,
-          behavior: `smooth`,
-        });
-
       });
     });
   }
@@ -717,4 +719,33 @@ document.addEventListener(`DOMContentLoaded`, function() {
   }
 
   /* add file form */
+
+  /* video controls */
+
+  const VIDEO_CONTAINER = `.js-video-container`;
+  const VIDEO = `.js-video`;
+  const VIDEO_BUTTON = `.js-video-button`;
+  const VIDEO_BUTTON_ACTIVE_CLASS = `video-button--active`;
+
+  const videoWrappers = Array.from(document.querySelectorAll(VIDEO_CONTAINER));
+
+  const handleVideoButtonClick = (video, evt) => {
+    const buttonClasses = evt.target.classList;
+
+    buttonClasses.contains(VIDEO_BUTTON_ACTIVE_CLASS) ? video.pause() : video.play();
+    buttonClasses.toggle(VIDEO_BUTTON_ACTIVE_CLASS);
+  };
+
+  if (videoWrappers.length) {
+    videoWrappers.map((videoWrapper) => {
+      const videoControl = videoWrapper.querySelector(VIDEO_BUTTON);
+      const video = videoWrapper.querySelector(VIDEO);
+
+      if (videoControl) {
+        videoControl.addEventListener(`click`, handleVideoButtonClick.bind(null, video));
+      }
+    });
+  }
+
+  /* video controls */
 });

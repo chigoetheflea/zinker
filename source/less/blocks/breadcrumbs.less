@@ -1,5 +1,21 @@
 .breadcrumbs {
   display: flex;
+  padding-bottom: 30px;
+  padding-top: 0;
+  border-bottom: 1px solid @zink;
+
+  a {
+    color: @zink;
+
+    &:hover,
+    &:focus {
+      color: @red;
+    }
+
+    &:active {
+      color: @red-dark;
+    }
+  }
 }
 
 @media (max-width: @break-point-4) {

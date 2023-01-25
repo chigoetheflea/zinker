@@ -12,7 +12,7 @@
 }
 
 .transition(svg) {
-  transition-property: opacity, fill;
+  transition-property: opacity, fill, border-color;
 }
 
 .transition(opacity) {
@@ -24,4 +24,34 @@
   width: 100%;
   height: auto;
   max-width: @maxWidth;
+}
+
+.shadow(@color) {
+  position: relative;
+
+  &::after {
+    .transition();
+
+    position: absolute;
+    left: 5%;
+    top: 10px;
+    z-index: -1;
+
+    width: 90%;
+    height: 90%;
+
+    filter: blur(8px);
+    background-color: @color;
+    border-radius: 50px;
+    opacity: 0.8;
+
+    content: '';
+  }
+
+  &:hover,
+  &:focus {
+    &::after {
+      top: 12px;
+    }
+  }
 }

@@ -27,10 +27,10 @@
 
   <div class="loading  js-loading"><span class="loading__spinner"></span></div>
 
-  <main>
+  <main class="site  about-company">
     <header class="header">
-      <a href="" class="header__phone">
-        <span>8 (800) 222-39-73</span>
+      <a href="tel:88002223973" class="header__phone">
+        <p>8 (800) 222-39-73</p>
 
         <p>Горячая линия по вопросам Цинкирования</p>
       </a>
@@ -57,11 +57,11 @@
 
               <nav class="menu-top__wrapper">
                 <a href="" class="menu-top__link">О компании</a>
-                <a href="" class="menu-top__link">Технология<br>Цинкирования</a>
-                <a href="" class="menu-top__link">Нормы<br>и заключения</a>
+                <a href="" class="menu-top__link">Технология Цинкирования</a>
+                <a href="" class="menu-top__link">Нормы и&nbsp;заключения</a>
                 <a href="" class="menu-top__link">Каталог</a>
-                <a href="" class="menu-top__link">Библиотека<br>знаний</a>
-                <a href="" class="menu-top__link">Кейсы<br>Цинкирования</a>
+                <a href="" class="menu-top__link">Библиотека знаний</a>
+                <a href="" class="menu-top__link">Кейсы Цинкирования</a>
                 <a href="" class="menu-top__link">Контакты</a>
               </nav>
             </div>
@@ -72,11 +72,99 @@
               <svg width="30px" height="30px" focusable="false" aria-hidden="true">
                 <use xlink:href="#icon_cart"></use>
               </svg>
+
+              <div class="header__cart-count">3</div>
             </a>
           </div>
         </div>
       </div>
     </header>
+
+    <section class="box  breadcrumbs  site__breadcrumbs  box--center">
+      <div class="columns-wrapper">
+        <div class="column">
+          <a href="">Главная</a>
+          &nbsp;/&nbsp;
+          <span>О компании</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="box  about  block-text-left  box--center">
+      <div class="columns-wrapper">
+        <div class="column  block-text-left__left  column--1-2  column--vertical">
+          <h1 class="title  box__title  title--huge">ООО «Цинкер»</h1>
+
+          <div class="group-buttons  about__buttons  js-scroll">
+            <a href="#technology" class="button  button--border">О технологии</a>
+
+            <a href="#application" class="button  button--border">Применение</a>
+
+            <a href="#ceo" class="button  button--border">Руководство</a>
+          </div>
+
+          <div class="box__content">
+            <p>ООО «Цинкер» - российская компания из Москвы, специализирующаяся на производстве составов класса Zinker для антикоррозионной защиты металла. На сегодняшний день технология цинкирования признана передавой технологией защиты металлических изделий от коррозии, по качественным и экономическим параметрам. С одной стороны, по технологии цинкирование напоминает классическое нанесение лакокрасочных материалов, однако по своим антикоррозионным свойствам и взаимодействию цинка с металлом является прямой альтернативой горячему цинкованию. По этой причине нанесение на металлические изделия составов класса  Zinker переросло в отдельную технологию - цинкирование.</p>
+
+            <p>Составы и технология были разработаны коллективом ученых из Москвы, который возглавил генеральный директор ООО «Цинкер» Василий Бочаров.</>
+          </div>
+        </div>
+
+        <div class="column  block-text-left__right  about__right  column--1-2  column--vertical">
+          <img src="img/pic_products.jpg" alt="Продукты Zinker" class="about__image">
+
+          <a href="" class="button  button--big  button--red">В каталог</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="box  production  block-media  box--lightgray  box--padding-rl-none">
+      <div class="columns-wrapper">
+        <div class="column  block-media__left  column--1-2">
+          <div class="block-media__video-wrapper  js-video-container">
+            <video class="block-media__video  js-video" preload autoplay muted loop poster="img/video_poster.jpg">
+              <source src="img/zinker_bg.mp4" type="video/mp4">
+
+              <source src="img/zinker_bg.ogv" type="video/ogg">
+
+              <source src="img/zinker_bg.webm" type="video/webm">
+
+              Элемент video не поддерживается вашим браузером.
+            </video>
+
+            <button class="button  video-button  block-media__video-button  video-button--active  js-video-button">
+              <div class="video-button__state  video-button__state--pause">
+                <svg width="24px" height="24px" focusable="false" aria-hidden="true">
+                  <use xlink:href="#icon_pause"></use>
+                </svg>
+
+                <p>Остановить</p>
+              </div>
+
+              <div class="video-button__state  video-button__state--play">
+                <svg width="24px" height="24px" focusable="false" aria-hidden="true">
+                  <use xlink:href="#icon_play"></use>
+                </svg>
+
+                <p>Продолжить</p>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <div class="column  block-media__right  column--1-2  column--vertical">
+          <h2 class="title  box__title  title--huge">Производство<br>антикоррозионных составов<br>класса Zinker</h2>
+
+          <div class="box__content  box__content--margin-none">
+            <p>Составы класса Zinker разработаны с использованием уникальной технологии, не имеющей аналогов на российском рынке. Однокомпонентный цинкирующий состав применяется в качестве самостоятельного покрытия для защиты от коррозии металлоконструкций разного габарита и конфигурации. Нанесение происходит при помощи кисти, валика или распыления, при этом цинкирование не требует дополнительного покрытия - достаточно нанесение только одного слоя. Покрытие обладает превосходными протекторными свойствами и высокой адгезией, благодаря чему поверхности металлических конструкции сохраняются в неизменном виде на протяжении многих лет эксплуатации.</p>
+
+            <p>Составы Zinker компании ООО «Цинкер» могут быть нанесены на изделие в широком температурном диапазоне от –30 до +50 °С, при этом не требуют специально оборудованного цеха. Процедуру можно проводить как в помещении, так и на открытом воздухе в полевых условиях с помощью кисти, валика или баллончика.</p>
+
+            <a href="" class="button  production__button  button--border">Узнать больше о технологии Цинкирования</a>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <script src="js/picturefill.min.js"></script>

@@ -1,0 +1,37 @@
+.menu-top {
+  display: flex;
+  width: 100%;
+}
+
+.menu-top__close {
+  display: none;
+}
+
+.menu-top__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+  padding: 0 50px;
+
+  border: 1px solid @zink;
+  border-radius: 28px;
+}
+
+.menu-top__link {
+  color: @zink;
+  font-weight: 900;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: @red;
+  }
+
+  &:active {
+    color: @red-dark;
+  }
+}

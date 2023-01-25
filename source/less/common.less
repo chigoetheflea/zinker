@@ -30,13 +30,11 @@ img {
   display: block;
   width: 100%;
   height: auto;
-  max-width: 1000% !important;
 }
 
 a {
   .transition();
 
-  text-decoration: none;
   color: @red;
 
   &:hover,
@@ -51,6 +49,15 @@ a {
 
   &:active {
     color: @red-dark;
+  }
+}
+
+button {
+  .transition();
+
+  &:focus {
+    outline: 1px dotted @red-light;
+    outline-offset: 3px;
   }
 }
 
