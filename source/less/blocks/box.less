@@ -28,6 +28,24 @@
   &--lightgray {
     background-color: @zink-light;
   }
+
+  &--gray {
+    color: white;
+    background-color: @zink;
+
+    a {
+      color: white;
+
+      &:hover,
+      &:focus {
+        color: @red;
+      }
+
+      &:active {
+        color: @red-light;
+      }
+    }
+  }
 }
 
 .box__title {

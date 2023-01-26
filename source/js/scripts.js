@@ -75,6 +75,11 @@ const SLIDER_SLIDE_CLASS = `latest-slider__slide`;
 
 const TAG_SEPARATOR = `,`;
 
+const VIDEO_CONTAINER = `.js-video-container`;
+const VIDEO = `.js-video`;
+const VIDEO_BUTTON = `.js-video-button`;
+const VIDEO_BUTTON_ACTIVE_CLASS = `video-button--active`;
+
 const Test = {
   REQUIRED: `required`,
   PHONE: `phone`,
@@ -198,26 +203,29 @@ document.addEventListener(`DOMContentLoaded`, function() {
 
   const scrollButtons = Array.from(document.querySelectorAll(SCROLL_BUTTON_CLASS));
 
+  const scrollToTarget = (selector) => {
+    const targetElement = document.querySelector(selector.getAttribute(`href`));
+    const position = targetElement.getBoundingClientRect().top;
+
+    // if (isMenuOpen(menuWrapper)) {
+    //   closeMenu();
+    // }
+
+    window.scrollBy({
+      top: position,
+      behavior: `smooth`,
+    });
+  };
+
+  const handleScrollButtonClick = (evt) => {
+    evt.preventDefault();
+
+    scrollToTarget(evt.target);
+  };
+
   if (scrollButtons.length) {
     scrollButtons.map((scrollButton) => {
-      scrollButton.addEventListener(`click`, (evt) => {
-        evt.preventDefault();
-
-        const target = document.querySelector(evt.target.dataset.target);
-
-        if (target) {
-          const position = target.getBoundingClientRect().top;
-
-          if (isMenuOpen(menuWrapper)) {
-            closeMenu();
-          }
-
-          window.scrollBy({
-            top: position,
-            behavior: `smooth`,
-          });
-        }
-      });
+      scrollButton.addEventListener(`click`, handleScrollButtonClick);
     });
   }
 
@@ -721,11 +729,6 @@ document.addEventListener(`DOMContentLoaded`, function() {
   /* add file form */
 
   /* video controls */
-
-  const VIDEO_CONTAINER = `.js-video-container`;
-  const VIDEO = `.js-video`;
-  const VIDEO_BUTTON = `.js-video-button`;
-  const VIDEO_BUTTON_ACTIVE_CLASS = `video-button--active`;
 
   const videoWrappers = Array.from(document.querySelectorAll(VIDEO_CONTAINER));
 

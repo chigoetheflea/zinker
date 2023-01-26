@@ -1,0 +1,59 @@
+.dat__left {
+  align-items: center;
+}
+
+.dat__right {
+  justify-content: center;
+}
+
+.dat__wheel-wrapper {
+  width: 100%;
+  max-width: 580px;
+}
+
+.dat__wheel {
+  position: relative;
+  width: 100%;
+  padding-top: 100%;
+}
+
+.dat__circle {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  &--one {
+    z-index: 10;
+    animation: rotate 18s infinite linear;
+  }
+
+  &--two {
+    z-index: 20;
+  }
+}
+
+.dat__button {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  z-index: 30;
+
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 70px;
+  padding: 0 0 0 3px;
+
+  border-radius: 28px;
+
+  svg {
+    .transition(svg);
+
+    fill: white;
+  }
+
+
+}
