@@ -1,0 +1,48 @@
+.social {
+  display: flex;
+  gap: 15px;
+
+  a {
+    svg {
+      .transition(svg);
+
+      fill: @zink;
+    }
+
+    &:hover,
+    &:focus {
+      svg {
+        fill: @red-light;
+      }
+    }
+
+    &:active {
+      svg {
+        fill: @red-dark;
+      }
+    }
+  }
+
+  &--white {
+    a {
+      svg {
+        .transition(svg);
+
+        fill: white;
+      }
+
+      &:hover,
+      &:focus {
+        svg {
+          fill: white;
+        }
+      }
+
+      &:active {
+        svg {
+          fill: white;
+        }
+      }
+    }
+  }
+}

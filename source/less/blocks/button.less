@@ -52,12 +52,17 @@
   &--white {
     .shadow(white);
 
+    z-index: 1;
     color: @red;
     background-color: white;
 
     &:hover,
     &:focus {
       color: @red-light;
+    }
+
+    &:focus {
+      outline: 1px dotted white;
     }
 
     &:active {
