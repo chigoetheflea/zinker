@@ -1,0 +1,47 @@
+.big-icon {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+
+  text-align: center;
+}
+
+.big-icon__sign {
+  .shadow(@zink-light);
+
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: @zink-light;
+}
+
+.big-icon__number {
+  position: absolute;
+  top: 7px;
+  left: 7px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  margin: 0;
+
+  color: white;
+  font-size: 16px;
+  font-weight: 900;
+  line-height: 1;
+  background-color: @red;
+  border-radius: 50%;
+}
+
+.big-icon__text {
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 900;
+}

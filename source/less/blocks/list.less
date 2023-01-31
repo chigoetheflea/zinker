@@ -1,0 +1,21 @@
+.list {
+  .list-style-none();
+
+
+  li {
+    position: relative;
+    margin-top: 10px;
+    padding-left: 20px;
+
+    &::before {
+      position: absolute;
+      top: 5px;
+      left: 0;
+      width: 10px;
+      height: 10px;
+      background: url('../../img/icon_marker.svg') 50% 50% no-repeat;
+
+      content: '';
+    }
+  }
+}
