@@ -29,13 +29,13 @@
 
   <header class="header">
     <a href="tel:88002223973" class="header__phone">
-      <p>8 (800) 222-39-73</p>
+      <p class="header__hotline">8 (800) 222-39-73</p>
 
-      <p>Горячая линия по вопросам Цинкирования</p>
+      <p class="header__hotline-text">Горячая линия по вопросам Цинкирования</p>
     </a>
 
     <div class="box  header__wrapper">
-      <div class="columns-wrapper">
+      <div class="columns-wrapper  header__columns">
         <div class="column  header__logo-wrapper  column--1-12">
           <a href="" class="img-link  header__logo" aria-label="Zinker">
             <svg width="65px" height="60px" focusable="false" aria-hidden="true">
@@ -44,25 +44,29 @@
           </a>
         </div>
 
-        <div class="column  header__menu-wrapper  column--wide  js-menu">
+        <div class="column  header__menu-wrapper  column--wide">
           <button class="header__burger  js-menu-button">
+            <div class="header__burger-stripes"></div>
+
             <p class="visually-hidden">Меню</p>
           </button>
 
-          <div class="menu-top  header__menu">
+          <div class="menu-top  header__menu  js-menu">
             <button class="menu-top__close  js-menu-close">
               <p class="visually-hidden">Закрыть меню</p>
             </button>
 
             <nav class="menu-top__wrapper">
-              <a href="" class="menu-top__link">О компании</a>
-              <a href="" class="menu-top__link">Технология Цинкирования</a>
+              <a href="" class="menu-top__link">О&nbsp;компании</a>
+              <a href="" class="menu-top__link">Технология<br class="no-display  no-display--more-1400">Цинкирования</a>
               <a href="" class="menu-top__link">Нормы и&nbsp;заключения</a>
               <a href="" class="menu-top__link">Каталог</a>
-              <a href="" class="menu-top__link">Библиотека знаний</a>
-              <a href="" class="menu-top__link">Кейсы Цинкирования</a>
+              <a href="" class="menu-top__link">Библиотека<br class="no-display  no-display--more-1400">знаний</a>
+              <a href="" class="menu-top__link">Кейсы<br class="no-display  no-display--more-1400">Цинкирования</a>
               <a href="" class="menu-top__link">Контакты</a>
             </nav>
+
+            <div class="menu-top__overlay"></div>
           </div>
         </div>
 
@@ -186,8 +190,46 @@
           </div>
         </div>
 
-        <div class="column  block-text-left__right  about__right  column--1-2  column--vertical">
-          <div class="docs-slider"></div>
+        <div class="column  application__slider  block-text-left__right  about__right  column--1-2  column--vertical  js-slider-docs">
+          <div class="docs-slider">
+            <div class="docs-slider__slides  js-slider">
+              <div class="docs-slider__slide">
+                <div class="docs-slider__wrapper">
+                  <img src="./img/pic_sert.jpg" alt="" width="400px" height="500px">
+                </div>
+              </div>
+
+              <div class="docs-slider__slide">
+                <div class="docs-slider__wrapper">
+                  <img src="./img/pic_sert.jpg" alt="" width="400px" height="500px">
+                </div>
+              </div>
+
+              <div class="docs-slider__slide">
+                <div class="docs-slider__wrapper">
+                  <img src="./img/pic_sert.jpg" alt="" width="400px" height="500px">
+                </div>
+              </div>
+            </div>
+
+            <div class="docs-slider__navigation  js-slider-navigation">
+              <button class="docs-slider__button  docs-slider__button--reverse  js-slider-prev">
+                <svg width="70px" height="20px" focusable="false" aria-hidden="true">
+                  <use xlink:href="#icon_arrow"></use>
+                </svg>
+
+                <span class="visually-hidden">Назад</span>
+              </button>
+
+              <button class="docs-slider__button  js-slider-next">
+                <svg width="70px" height="20px" focusable="false" aria-hidden="true">
+                  <use xlink:href="#icon_arrow"></use>
+                </svg>
+
+                <span class="visually-hidden">Вперед</span>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -244,7 +286,7 @@
           <div class="ceo__info">
             <h3 class="title  ceo__name">Василий Алексеевич<br>Бочаров</h3>
 
-            <p class="ceo__job">Директор ООО «Цинкер»</p>
+            <p class="ceo__job">Директор ООО&nbsp;«Цинкер»</p>
           </div>
         </div>
       </div>
@@ -276,7 +318,7 @@
       <div class="columns-wrapper">
         <div class="column  footer__left  column--1-4  column--vertical">
           <div class="footer__menu-wrapper">
-            <p class="footer__title">
+            <p class="footer__title  footer__title--first-column">
               Zinker
             </p>
 
@@ -339,25 +381,25 @@
 
               <p>Отдел продаж</p>
             </div>
+          </div>
 
-            <div class="footer__addresses">
-              <div class="footer__address">
-                <p class="footer__title">Адрес офиса в Москве</p>
+          <div class="footer__addresses">
+            <div class="footer__address">
+              <p class="footer__title">Адрес офиса в Москве</p>
 
-                <address>111622, Москва, ул. Большая Косинская, д. 27, стр. 16</address>
-              </div>
+              <address>111622, Москва, ул. Большая Косинская, д. 27, стр. 16</address>
+            </div>
 
-              <div class="footer__address">
-                <p class="footer__title">Адрес офиса в Новосибирске</p>
+            <div class="footer__address">
+              <p class="footer__title">Адрес офиса в Новосибирске</p>
 
-                <address>630110, Новосибирск, ул. Богдана Хмельницкого, 90, 3 этаж, офис 318</address>
-              </div>
+              <address>630110, Новосибирск, ул. Богдана Хмельницкого, 90, 3 этаж, офис 318</address>
+            </div>
 
-              <div class="footer__address">
-                <p class="footer__title">Адрес офиса в Наб. Челнах</p>
+            <div class="footer__address">
+              <p class="footer__title">Адрес офиса в Наб. Челнах</p>
 
-                <address>423, Наб. Челны, База Дакар, Белкам Набережные Челны, проспект КАМАЗА, 22/3</address>
-              </div>
+              <address>423, Наб. Челны, База Дакар, Белкам Набережные Челны, проспект КАМАЗА, 22/3</address>
             </div>
           </div>
         </div>

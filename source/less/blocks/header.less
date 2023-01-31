@@ -102,3 +102,132 @@
   border-radius: 50%;
   background-color: @red;
 }
+
+.header__columns {
+  flex-wrap: nowrap;
+}
+
+@media (max-width: @break-point-0) {
+  .header__logo-wrapper,
+  .header__cart-wrapper {
+    width: auto;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: @break-point-2) {
+  .header__burger {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    margin: 0 0 0 15px;
+    padding: 0;
+
+    border: 0;
+    background: none;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      .header__burger-stripes {
+        background-color: @red;
+
+        &::after,
+        &::before {
+          background-color: @red;
+        }
+      }
+    }
+
+    &:active {
+      .header__burger-stripes {
+        background-color: @red-light;
+
+        &::after,
+        &::before {
+          background-color: @red-light;
+        }
+      }
+    }
+  }
+
+  .header__burger-stripes {
+    .transition();
+
+    position: relative;
+    width: 100%;
+    height: 4px;
+
+    background-color: @zink;
+    border-radius: 2px;
+
+    &::after,
+    &::before {
+      .transition();
+
+      position: absolute;
+      left: 0;
+
+      width: 100%;
+      height: 4px;
+      background-color: @zink;
+      border-radius: 2px;
+
+      content: '';
+    }
+
+    &::before {
+      top: -8px;
+    }
+
+    &::after {
+      bottom: -8px;
+    }
+  }
+
+  .header__menu-wrapper {
+    flex-grow: 0;
+    order: 1;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .header__logo-wrapper {
+    flex-grow: 1;
+  }
+}
+
+@media (max-width: @break-point-tablet) {
+  .header__phone {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: @break-point-3) {
+  .header__phone {
+    flex-direction: column;
+    text-align: center;
+    gap: 5px;
+  }
+
+  .header {
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: @break-point-4) {
+  .header__hotline-text {
+    font-size: 16px;
+  }
+
+  .header__phone {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+
+  .header {
+    margin-bottom: 15px;
+  }
+}

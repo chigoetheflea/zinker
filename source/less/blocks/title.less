@@ -35,35 +35,31 @@
   }
 }
 
-@media (max-width: @break-point-2) {
+@media (max-width: @break-point-1) {
   .title {
-    &--regular {
-      font-size: 16px;
-      line-height: 24px;
+    &--thin {
+      font-size: 50px;
+      line-height: 55px;
+    }
+  }
+}
+
+@media (max-width: @break-point-4) {
+  .title {
+    &--huge {
+      font-size: 28px;
+      line-height: 32px;
     }
 
-    &--medium {
-      font-size: 16px;
-      line-height: 24px;
-    }
-
-    &--big {
-      font-size: 20px;
-      line-height: 28px;
-    }
-
-    &--center {
-      width: 100%;
-      text-align: center;
+    &--thin {
+      font-size: 40px;
+      line-height: 42px;
     }
   }
 }
 
 @media (max-width: @break-point-mobile) {
   .title {
-    &--regular {
-      font-size: 16px;
-      line-height: 22px;
-    }
+
   }
 }

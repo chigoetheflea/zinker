@@ -55,6 +55,7 @@
 .box__title {
   margin-bottom: 50px;
 }
+
 .box__content {
   display: flex;
   flex-direction: column;
@@ -62,6 +63,9 @@
   margin-top: 30px;
 
   p {
+    margin-top: 7px;
+    margin-bottom: 7px;
+
     &:first-of-type {
       margin-top: 0;
     }
@@ -78,33 +82,81 @@
 
 @media (max-width: @break-point-0) {
   .box {
+    padding-left: 50px;
+    padding-right: 50px;
+
     &--wide {
+      padding-right: 35px;
+      padding-left: 35px;
+    }
+
+    &--center {
       padding-left: 50px;
       padding-right: 50px;
     }
-  }
-}
 
-@media (max-width: @break-point-tablet) {
-  .box {
-    padding-left: 30px;
-    padding-right: 30px;
+    &--padding-tb-none {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
 
-    &--wide {
-      padding-left: 30px;
-      padding-right: 30px;
+    &--padding-rl-none {
+      padding-right: 0;
+      padding-left: 0;
+    }
+
+    &--padding-none {
+      padding: 0;
     }
   }
 }
 
-@media (max-width: @break-point-mobile) {
+@media (max-width: @break-point-2) {
   .box {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-top: 30px;
+    padding-bottom: 30px;
 
-    &--wide {
-      padding-left: 15px;
-      padding-right: 15px;
+    &--padding-tb-none {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    &--padding-none {
+      padding: 0;
+    }
+  }
+
+  .box__title {
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: @break-point-3) {
+  .box {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-right: 30px;
+    padding-left: 30px;
+
+    &--padding-tb-none {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    &--padding-none {
+      padding: 0;
+    }
+  }
+
+  .box__title {
+    margin-bottom: 25px;
+  }
+
+  .box__content {
+    margin-top: 20px;
+
+    &--margin-none {
+      margin-top: 0;
     }
   }
 }

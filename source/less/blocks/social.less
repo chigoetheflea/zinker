@@ -3,6 +3,8 @@
   gap: 15px;
 
   a {
+    display: flex;
+
     svg {
       .transition(svg);
 
@@ -42,6 +44,19 @@
         svg {
           fill: white;
         }
+      }
+    }
+  }
+}
+
+@media (max-width: @break-point-tablet) {
+  .social {
+    gap: 25px;
+
+    a {
+      svg {
+        width: 30px;
+        height: 30px;
       }
     }
   }

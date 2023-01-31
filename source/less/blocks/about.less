@@ -9,3 +9,30 @@
 .about__right {
   align-items: flex-end;
 }
+
+@media (max-width: @break-point-0) {
+  .about__right {
+    align-items: center;
+  }
+}
+
+@media (max-width: @break-point-2) {
+  .about__image-wrapper {
+    margin-top: 0;
+    max-width: 50%;
+  }
+
+  .about__button {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: @break-point-3) {
+  .about__image-wrapper {
+    max-width: 80%;
+  }
+
+  .about__button {
+    margin-bottom: 15px;
+  }
+}

@@ -144,6 +144,14 @@
   }
 }
 
+@media (max-width: @break-point-tablet) {
+  .form__fields {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
 @media (max-width: @break-point-3) {
   .form__row {
     &--cells {
@@ -189,6 +197,16 @@
   .form__row {
     &--frame {
       padding: 20px;
+    }
+  }
+}
+
+@media (max-width: @break-point-3) {
+  .form {
+    &--inline {
+      .form__fields {
+        gap: 15px;
+      }
     }
   }
 }

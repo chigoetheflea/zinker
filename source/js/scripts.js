@@ -3,8 +3,8 @@
 const MENU = `.js-menu`;
 const MENU_BUTTON = `.js-menu-button`;
 const MENU_CLOSE = `.js-menu-close`;
-const MENU_ACTIVE_CLASS = `main-menu--active`;
-const MENU_CLOSED_CLASS = `main-menu--closed`;
+const MENU_ACTIVE_CLASS = `menu-top--active`;
+const MENU_CLOSED_CLASS = `menu-top--closed`;
 const CLASS_REMOVING_TIME = 700;
 
 const SLIDER_CLASSES = [`peppermint`, `peppermint-inactive`];
@@ -150,9 +150,11 @@ document.addEventListener(`DOMContentLoaded`, function() {
 
   const isMenuOpen = (menu) => menu.classList.contains(MENU_ACTIVE_CLASS);
 
-  menuButton.addEventListener(`click`, () => {
-    (!isMenuOpen(menuWrapper)) ? openMenu() : closeMenu();
-  });
+  if (menuButton) {
+    menuButton.addEventListener(`click`, () => {
+      (!isMenuOpen(menuWrapper)) ? openMenu() : closeMenu();
+    });
+  }
 
   /* menu */
 
@@ -312,7 +314,7 @@ document.addEventListener(`DOMContentLoaded`, function() {
       sliderWrapper.classList.add(...SLIDER_CLASSES);
 
       if (sliderSettings.isResponsive) {
-        sourceSlides = sliderContainer.querySelectorAll(`.latest__source .latest-slider__item`);
+        sourceSlides = sliderContainer.querySelectorAll(`.latest__source .latest-slider__item`); //to fix
 
         createContainers(sourceSlides, sliderWrapper);
       }
@@ -333,10 +335,11 @@ document.addEventListener(`DOMContentLoaded`, function() {
     }
   };
 
-  initSlider(document.querySelector(`.js-shortnews-slider`), {
+  initSlider(document.querySelector(`.js-slider-docs`), {
     ...SlidersSettings,
     slideshow: true,
     slideshowInterval: 5000,
+    dots: false,
   });
 
   /* sliders */

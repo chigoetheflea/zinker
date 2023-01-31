@@ -28,12 +28,12 @@
 
 .footer__menu {
   display: flex;
-  margin-top: 7px;
+  margin-top: 15px;
   flex-direction: column;
+  gap: 7px;
 
   a {
     align-self: flex-start;
-    margin-top: 8px;
     text-decoration: none;
 
     &:hover,
@@ -100,4 +100,55 @@
 
 .footer__copyright {
   margin: 30px 0 0 0;
+}
+
+@media (max-width: @break-point-tablet) {
+  .footer__title {
+    &--first-column {
+      display: none;
+    }
+  }
+
+  .footer__menu {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 30px;
+    margin: 0;
+  }
+
+  .footer__social {
+    justify-content: center;
+    margin-top: 50px;
+  }
+
+  .footer__center {
+    text-align: center;
+  }
+
+  .footer__contacts,
+  .footer__addresses {
+    margin-top: 20px;
+  }
+
+  .footer__right {
+    align-items: center;
+  }
+
+  .footer__logo {
+    margin-top: 50px;
+  }
+}
+
+@media (max-width: @break-point-4) {
+  .footer__big-text {
+    font-size: 24px;
+    line-height: 1;
+  }
+}
+
+@media (max-width: @break-point-mobile) {
+  .footer__logo {
+    margin-top: 30px;
+  }
 }

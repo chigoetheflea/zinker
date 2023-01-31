@@ -54,6 +54,28 @@
 
     fill: white;
   }
+}
 
+@media (max-width: @break-point-1) {
+  .dat__wheel-wrapper {
+    padding-right: 30px;
+  }
+}
 
+@media (max-width: @break-point-2) {
+  .dat__left {
+    order: 1;
+    justify-content: center;
+  }
+
+  .dat__wheel-wrapper {
+    padding-right: 0;
+    margin-top: 15px;
+  }
+}
+
+@media (max-width: @break-point-3) {
+  .dat__wheel-wrapper {
+    margin-top: 0;
+  }
 }
