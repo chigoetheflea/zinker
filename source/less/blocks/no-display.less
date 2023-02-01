@@ -1,11 +1,23 @@
 .no-display {
   display: none;
+
+  &--less-768 {
+    display: inline;
+  }
 }
 
 @media (max-width: @break-point-0) {
   .no-display {
     &--more-1400 {
       display: inline;
+    }
+  }
+}
+
+@media (max-width: @break-point-tablet) {
+  .no-display {
+    &--less-768 {
+      display: none;
     }
   }
 }
