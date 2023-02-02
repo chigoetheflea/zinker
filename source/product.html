@@ -83,7 +83,7 @@
     </div>
   </header>
 
-  <main class="site  catalogue">
+  <main class="site  product">
     <section class="box  breadcrumbs  site__breadcrumbs  box--center" aria-label="Навигация по разделам">
       <div class="columns-wrapper">
         <div class="column">
@@ -94,29 +94,59 @@
       </div>
     </section>
 
-    <section class="box  page-header  box--center">
+    <section class="box  product-big  box--center  box--border-bottom">
       <div class="columns-wrapper">
-        <div class="column  page-header__left  column--2-3col2">
-          <h1 class="title  title--huge">Каталог</h1>
+        <div class="column  product-big__left  column--1-2">
+          <div class="product-big__image-wrapper">
+            <img src="./img/pic_product.jpg" alt="" width="500" height="500">
+          </div>
         </div>
 
-        <div class="column  page-header__right  column--1-3col2">
-          <svg width="100px" height="100px" focusable="false" aria-hidden="true" class="page-header__sign">
+        <div class="column  product-big__right  column--1-2  column--vertical">
+          <svg width="100px" height="100px" focusable="false" aria-hidden="true" class="product-big__sign">
             <use xlink:href="#icon_shield"></use>
           </svg>
+
+          <h1 class="title  product-big__title  title--huge">Состав класса Zinker</h1>
+
+          <p class="product-big__price">11 000 <span class="product-big__currency">руб.</span></p>
+
+          <p class="product-big__description">
+            Используется для эффективной антикоррозионной защиты черных металлов в различных средах (почве, воде, атмосфере). Применяется как самостоятельное покрытие, а так же как протекторная противокоррозионная грунтовка под различные декоративные покрытия.
+          </p>
+
+          <div class="product-big__meta">
+            <p class="product-big__volume">Объем: 10 килограммов</p>
+
+            <p class="product-big__number">Артикул: 0018</p>
+          </div>
+
+          <form action="" class="count-form  product-big__form  count-form--inline">
+            <div class="count-form__fields  js-count">
+              <button class="count-form__button  count-form__button--minus  js-count-minus">
+                <span class="visually-hidden">Уменьшить</span>
+              </button>
+
+              <input type="number" step="1" min="1" value="1" id="qty" name="quantity" class="count-form__input  js-count-field">
+
+              <button class="count-form__button  count-form__button--plus  js-count-plus">
+                <span class="visually-hidden">Увеличить</span>
+              </button>
+            </div>
+
+            <button type="submit" class="button  count-form__submit  button--red  button--big">В корзину</button>
+          </form>
         </div>
       </div>
     </section>
 
-    <section class="box  products  box--center  box--padding-top-none">
-      <div class="columns-wrapper">
-        <div class="column  products__title  column--wide  column--vertical">
-          <h2 class="title  title--big  title--center">Цинкирующие составы класса Zinker</h2>
-
-          <p class="subtitle  subtitle--center">Полностью готовы к использованию. Разбавление состава при необходимости производится разбавителями ZinkerMultisolv</p>
+    <section class="box  related-products  box--center">
+      <div class="columns-wrapper  columns-wrapper--center">
+        <div class="column  column--wide">
+          <h2 class="title  title--huge  title--center">Другие товары</h2>
         </div>
 
-        <div class="column  products__item   column--1-4">
+        <div class="column  related-products__item  column--1-4">
           <article class="product-small">
             <div class="product-small__image-wrapper">
               <a href="" class="img-link">
@@ -150,7 +180,7 @@
           </article>
         </div>
 
-        <div class="column  products__item   column--1-4">
+        <div class="column  related-products__item  column--1-4">
           <article class="product-small">
             <div class="product-small__image-wrapper">
               <a href="" class="img-link">
@@ -184,7 +214,7 @@
           </article>
         </div>
 
-        <div class="column  products__item   column--1-4">
+        <div class="column  related-products__item  column--1-4">
           <article class="product-small">
             <div class="product-small__image-wrapper">
               <a href="" class="img-link">
@@ -218,153 +248,7 @@
           </article>
         </div>
 
-        <div class="column  products__item   column--1-4">
-          <article class="product-small">
-            <div class="product-small__image-wrapper">
-              <a href="" class="img-link">
-                <img src="./img/pic_product.jpg" alt="Zinker" width="300" height="300">
-              </a>
-            </div>
-
-            <h3 class="visually-hidden">Цинкирующий состав, 10кг</h3>
-
-            <div class="product-small__meta">
-              <p class="product-small__weight"><a href="">25 киллограммов</a></p>
-
-              <p class="product-small__price">25 000<span class="product-small__currency">&nbsp;руб.</span></p>
-            </div>
-
-            <form action="" class="count-form  product-small__form">
-              <div class="count-form__fields  js-count">
-                <button class="count-form__button  count-form__button--minus  js-count-minus">
-                  <span class="visually-hidden">Уменьшить</span>
-                </button>
-
-                <input type="number" step="1" min="1" value="1" id="qty" name="quantity" class="count-form__input  js-count-field">
-
-                <button class="count-form__button  count-form__button--plus  js-count-plus">
-                  <span class="visually-hidden">Увеличить</span>
-                </button>
-              </div>
-
-              <button type="submit" class="button  count-form__submit  button--border">В корзину</button>
-            </form>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="box  products  box--center">
-      <div class="columns-wrapper">
-        <div class="column  products__title  column--wide  column--vertical">
-          <h2 class="title  title--big  title--center">Цинкирующие составы класса Zinker</h2>
-
-          <p class="subtitle  subtitle--center">Полностью готовы к использованию. Разбавление состава при необходимости производится разбавителями ZinkerMultisolv</p>
-        </div>
-
-        <div class="column  products__item   column--1-4">
-          <article class="product-small">
-            <div class="product-small__image-wrapper">
-              <a href="" class="img-link">
-                <img src="./img/pic_product.jpg" alt="Zinker" width="300" height="300">
-              </a>
-            </div>
-
-            <h3 class="visually-hidden">Цинкирующий состав, 10кг</h3>
-
-            <div class="product-small__meta">
-              <p class="product-small__weight"><a href="">25 киллограммов</a></p>
-
-              <p class="product-small__price">25 000<span class="product-small__currency">&nbsp;руб.</span></p>
-            </div>
-
-            <form action="" class="count-form  product-small__form">
-              <div class="count-form__fields  js-count">
-                <button class="count-form__button  count-form__button--minus  js-count-minus">
-                  <span class="visually-hidden">Уменьшить</span>
-                </button>
-
-                <input type="number" step="1" min="1" value="1" id="qty" name="quantity" class="count-form__input  js-count-field">
-
-                <button class="count-form__button  count-form__button--plus  js-count-plus">
-                  <span class="visually-hidden">Увеличить</span>
-                </button>
-              </div>
-
-              <button type="submit" class="button  count-form__submit  button--border">В корзину</button>
-            </form>
-          </article>
-        </div>
-
-        <div class="column  products__item   column--1-4">
-          <article class="product-small">
-            <div class="product-small__image-wrapper">
-              <a href="" class="img-link">
-                <img src="./img/pic_product.jpg" alt="Zinker" width="300" height="300">
-              </a>
-            </div>
-
-            <h3 class="visually-hidden">Цинкирующий состав, 10кг</h3>
-
-            <div class="product-small__meta">
-              <p class="product-small__weight"><a href="">25 киллограммов</a></p>
-
-              <p class="product-small__price">25 000<span class="product-small__currency">&nbsp;руб.</span></p>
-            </div>
-
-            <form action="" class="count-form  product-small__form">
-              <div class="count-form__fields  js-count">
-                <button class="count-form__button  count-form__button--minus  js-count-minus">
-                  <span class="visually-hidden">Уменьшить</span>
-                </button>
-
-                <input type="number" step="1" min="1" value="1" id="qty" name="quantity" class="count-form__input  js-count-field">
-
-                <button class="count-form__button  count-form__button--plus  js-count-plus">
-                  <span class="visually-hidden">Увеличить</span>
-                </button>
-              </div>
-
-              <button type="submit" class="button  count-form__submit  button--border">В корзину</button>
-            </form>
-          </article>
-        </div>
-
-        <div class="column  products__item   column--1-4">
-          <article class="product-small">
-            <div class="product-small__image-wrapper">
-              <a href="" class="img-link">
-                <img src="./img/pic_product.jpg" alt="Zinker" width="300" height="300">
-              </a>
-            </div>
-
-            <h3 class="visually-hidden">Цинкирующий состав, 10кг</h3>
-
-            <div class="product-small__meta">
-              <p class="product-small__weight"><a href="">25 киллограммов</a></p>
-
-              <p class="product-small__price">25 000<span class="product-small__currency">&nbsp;руб.</span></p>
-            </div>
-
-            <form action="" class="count-form  product-small__form">
-              <div class="count-form__fields  js-count">
-                <button class="count-form__button  count-form__button--minus  js-count-minus">
-                  <span class="visually-hidden">Уменьшить</span>
-                </button>
-
-                <input type="number" step="1" min="1" value="1" id="qty" name="quantity" class="count-form__input  js-count-field">
-
-                <button class="count-form__button  count-form__button--plus  js-count-plus">
-                  <span class="visually-hidden">Увеличить</span>
-                </button>
-              </div>
-
-              <button type="submit" class="button  count-form__submit  button--border">В корзину</button>
-            </form>
-          </article>
-        </div>
-
-        <div class="column  products__item   column--1-4">
+        <div class="column  related-products__item  column--1-4">
           <article class="product-small">
             <div class="product-small__image-wrapper">
               <a href="" class="img-link">
