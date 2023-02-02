@@ -754,4 +754,42 @@ document.addEventListener(`DOMContentLoaded`, function() {
   }
 
   /* video controls */
+
+  /* product count */
+
+  const COUNT = `.js-count`;
+  const COUNT_FIELD = `.js-count-field`;
+  const COUNT_MINUS = `js-count-minus`;
+  const COUNT_PLUS = `js-count-plus`;
+
+  const countFields = Array.from(document.querySelectorAll(COUNT));
+
+  const changeCount = (target) => {
+    const field = target.parentNode.querySelector(COUNT_FIELD);
+    let value = field.value;
+
+    if (target.classList.contains(COUNT_MINUS)) {
+      value = (value > 1) ? value-1 : value;
+    }
+
+    if (target.classList.contains(COUNT_PLUS)) {
+      value++;
+    }
+
+    field.value = value;
+  };
+
+  const handleCountButtonClick = (evt) => {
+    evt.preventDefault();
+
+    changeCount(evt.target);
+  };
+
+  if (countFields.length) {
+    countFields.map((countField) => {
+      countField.addEventListener(`click`, handleCountButtonClick);
+    });
+  }
+
+  /* product count */
 });
