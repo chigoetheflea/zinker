@@ -13,3 +13,29 @@
 .library__left {
   padding-right: 70px;
 }
+
+@media (max-width: @break-point-2) {
+  .library__left {
+    padding-right: 30px;
+  }
+}
+
+@media (max-width: @break-point-tablet) {
+  .library__right {
+    margin-top: 15px;
+  }
+
+  .library__left {
+    padding: 0;
+  }
+
+  .library__items {
+    gap: 15px;
+  }
+}
+
+@media (max-width: @break-point-3) {
+  .library__items {
+    gap: 30px;
+  }
+}

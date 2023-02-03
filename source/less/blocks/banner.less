@@ -1,9 +1,9 @@
 .banner {
   display: flex;
-  height: 900px;
-  padding-top: 140px;
+  padding-top: 300px;
+  padding-bottom: 150px;
 
-  background: @zink-light url('../../img/pic_products_bg@x1.jpg') 50% 0;
+  background: @zink-light url('../../img/pic_products_bg@x1.jpg') 50% 0 no-repeat;
   background-size: cover;
 }
 
@@ -14,6 +14,8 @@
 
 .banner__buttons {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 30px;
   margin-top: 50px;
 }
@@ -21,4 +23,79 @@
 .banner__title {
   font-size: 48px;
   line-height: 55px;
+}
+
+@media (max-width: @break-point-0) {
+  .banner {
+    padding-bottom: 100px;
+    padding-top: 250px;
+    background-position: 50px 50px;
+  }
+}
+
+@media (max-width: @break-point-1) {
+  .banner {
+    background-size: auto 100%;
+  }
+
+  .banner__title {
+    font-size: 36px;
+    line-height: 42px;
+  }
+
+  .banner__title,
+  .banner__buttons {
+    margin-left: 50px;
+  }
+}
+
+@media (max-width: @break-point-2) {
+  .banner {
+    padding-bottom: 50px;
+    background-position: -50px 50px;
+  }
+
+  .banner__title,
+  .banner__buttons {
+    margin-left: 0;
+  }
+
+  .banner__buttons {
+    gap: 15px;
+  }
+}
+
+@media (max-width: @break-point-tablet) {
+  .banner {
+    padding-top: 200px;
+    background-position: -10px 50px;
+  }
+
+  .banner__buttons {
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: @break-point-3) {
+  .banner {
+    padding-top: 500px;
+    background: @zink-light url('../../img/pic_products_bg_2@x1.jpg') 50% 40% no-repeat;
+    background-size: 80% auto;
+  }
+
+  .banner__column {
+    align-items: center;
+  }
+}
+
+@media (max-width: @break-point-mobile) {
+  .banner {
+    padding-top: 450px;
+  }
+
+  .banner__title {
+    align-self: flex-start;
+    font-size: 28px;
+    line-height: 32px;
+  }
 }

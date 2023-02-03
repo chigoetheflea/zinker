@@ -16,3 +16,45 @@
 .block-text-double__columns {
   gap: 0;
 }
+
+@media (max-width: @break-point-2) {
+  .block-text-double__left,
+  .block-text-double__right {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  .block-text-double__left {
+    padding-right: 50px;
+  }
+
+  .block-text-double__right {
+    padding-left: 50px;
+  }
+}
+
+@media (max-width: @break-point-tablet) {
+  .block-text-double__left {
+    padding-right: 0;
+    border: none;
+  }
+
+  .block-text-double__right {
+    position: relative;
+    padding-left: 0;
+
+    &::after {
+      position: absolute;
+      top: 0;
+      left: 50%;
+
+      height: 1px;
+      width: 200%;
+
+      background-color: @zink;
+      transform: translateX(-50%);
+
+      content: '';
+    }
+  }
+}

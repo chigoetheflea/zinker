@@ -37,3 +37,26 @@
   line-height: 1;
   font-weight: 900;
 }
+
+@media (max-width: @break-point-3) {
+  .archive-video {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .archive-video__wrapper {
+    width: 100%;
+    border-radius: 30px;
+  }
+
+  .archive-video__meta {
+    padding: 0;
+  }
+}
+
+@media (max-width: @break-point-mobile) {
+  .archive-video__wrapper {
+    width: 100%;
+    border-radius: 20px;
+  }
+}
