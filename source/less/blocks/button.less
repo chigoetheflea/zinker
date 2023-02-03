@@ -36,6 +36,7 @@
   &--red {
     .shadow(@red);
 
+    z-index: 1;
     color: white;
     background-color: @red;
 
@@ -43,10 +44,18 @@
     &:focus {
       background-color: @red-light;
       color: white;
+
+      &::after {
+        background-color: @red-light;
+      }
     }
 
     &:active {
       background-color: @red-dark;
+
+      &::after {
+        background-color: @red-dark;
+      }
     }
   }
 
@@ -59,7 +68,7 @@
 
     &:hover,
     &:focus {
-      color: @red-light;
+      color: @zink;
     }
 
     &:focus {
@@ -67,7 +76,7 @@
     }
 
     &:active {
-      color: @red-dark;
+      color: @zink-dark;
     }
   }
 

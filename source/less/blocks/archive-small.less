@@ -1,0 +1,32 @@
+.archive-small {
+  display: flex;
+  flex-direction: column;
+}
+
+.archive-small__title {
+  margin: 0;
+
+  a {
+    color: @zink;
+
+    &:hover,
+    &:focus {
+      color: @red;
+    }
+
+    &:active {
+      color: @red-light;
+    }
+  }
+}
+
+.archive-small__excerpt {
+  margin: 10px 0 0 0;
+}
+
+.archive-small__date {
+  margin-top: 15px;
+  font-size: 14px;
+  line-height: 1;
+  font-weight: 900;
+}

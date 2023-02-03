@@ -1,0 +1,22 @@
+.table {
+  border-spacing: 0;
+  border-collapse: collapse;
+
+  td {
+    width: 25%;
+    padding: 10px 15px;
+    border: 1px solid @zink;
+  }
+
+  tr, thead {
+    td {
+      &:first-child {
+        font-weight: 900;
+      }
+
+      &:nth-child(3) {
+        background-color: @zink-light;
+      }
+    }
+  }
+}
