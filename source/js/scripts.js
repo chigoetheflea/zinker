@@ -163,7 +163,7 @@ document.addEventListener(`DOMContentLoaded`, function() {
   const closeModal = (modal, button) => {
     switchModalClasses(modal, {active: MODAL_ACTIVE_CLASS, closed: MODAL_CLOSED_CLASS,});
 
-    button.removeEventListener(`click`, onModalCloseClick);
+    button.removeEventListener(`click`, handleModalCloseClick);
   }
 
   const openModal = (button) => {
@@ -173,11 +173,11 @@ document.addEventListener(`DOMContentLoaded`, function() {
     if (target) {
       target.classList.add(MODAL_ACTIVE_CLASS);
 
-      modalClose.addEventListener(`click`, onModalCloseClick);
+      modalClose.addEventListener(`click`, handleModalCloseClick);
     }
   };
 
-  const onModalCloseClick = (evt) => {
+  const handleModalCloseClick = (evt) => {
     evt.preventDefault();
 
     const modal = evt.target.closest(MODAL);
@@ -185,7 +185,7 @@ document.addEventListener(`DOMContentLoaded`, function() {
     closeModal(modal, evt.target);
   }
 
-  const onModalButtonClick = (evt) => {
+  const handleModalButtonClick = (evt) => {
     evt.preventDefault();
 
     openModal(evt.target);
@@ -195,7 +195,7 @@ document.addEventListener(`DOMContentLoaded`, function() {
 
   if (modalButtons.length) {
     modalButtons.map((modalButton) => {
-      modalButton.addEventListener(`click`, onModalButtonClick);
+      modalButton.addEventListener(`click`, handleModalButtonClick);
     });
   }
 
