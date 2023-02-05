@@ -1,0 +1,46 @@
+.pagination {
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+
+  a, span {
+    font-size: 24px;
+    line-height: 1;
+    font-weight: 900;
+    text-decoration: none;
+  }
+
+  a {
+    color: @zink;
+    opacity: 0.5;
+
+    &:hover,
+    &:focus {
+      color: @red;
+      opacity: 1;
+    }
+
+    &:active {
+      color: @red-light;
+    }
+  }
+}
+
+.pagination__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 30px;
+
+  &--reverse {
+    transform: rotate(180deg);
+    margin-left: 0;
+    margin-right: 30px;
+  }
+}
+
+@media (max-width: @break-point-4) {
+  .pagination__button {
+    display: none;
+  }
+}
