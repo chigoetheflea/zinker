@@ -133,27 +133,30 @@ document.addEventListener(`DOMContentLoaded`, function() {
   /* menu */
 
   const menuWrapper = document.querySelector(MENU);
-  const menuButton = document.querySelector(MENU_BUTTON);
-  const menuButtonClose = menuWrapper.querySelector(MENU_CLOSE);
 
-  const openMenu = () => {
-    menuWrapper.classList.add(MENU_ACTIVE_CLASS);
+  if (menuWrapper) {
+    const menuButton = document.querySelector(MENU_BUTTON);
+    const menuButtonClose = menuWrapper.querySelector(MENU_CLOSE);
 
-    menuButtonClose.addEventListener('click', closeMenu);
-  };
+    const openMenu = () => {
+      menuWrapper.classList.add(MENU_ACTIVE_CLASS);
 
-  const closeMenu = () => {
-    switchModalClasses(menuWrapper, {active: MENU_ACTIVE_CLASS, closed: MENU_CLOSED_CLASS,});
+      menuButtonClose.addEventListener('click', closeMenu);
+    };
 
-    menuButtonClose.removeEventListener(`click`, closeMenu);
-  };
+    const closeMenu = () => {
+      switchModalClasses(menuWrapper, {active: MENU_ACTIVE_CLASS, closed: MENU_CLOSED_CLASS,});
 
-  const isMenuOpen = (menu) => menu.classList.contains(MENU_ACTIVE_CLASS);
+      menuButtonClose.removeEventListener(`click`, closeMenu);
+    };
 
-  if (menuButton) {
-    menuButton.addEventListener(`click`, () => {
-      (!isMenuOpen(menuWrapper)) ? openMenu() : closeMenu();
-    });
+    const isMenuOpen = (menu) => menu.classList.contains(MENU_ACTIVE_CLASS);
+
+    if (menuButton) {
+      menuButton.addEventListener(`click`, () => {
+        (!isMenuOpen(menuWrapper)) ? openMenu() : closeMenu();
+      });
+    }
   }
 
   /* menu */
@@ -208,10 +211,6 @@ document.addEventListener(`DOMContentLoaded`, function() {
   const scrollToTarget = (selector) => {
     const targetElement = document.querySelector(selector.getAttribute(`href`));
     const position = targetElement.getBoundingClientRect().top;
-
-    // if (isMenuOpen(menuWrapper)) {
-    //   closeMenu();
-    // }
 
     window.scrollBy({
       top: position,
@@ -338,7 +337,7 @@ document.addEventListener(`DOMContentLoaded`, function() {
   initSlider(document.querySelector(`.js-slider-docs`), {
     ...SlidersSettings,
     slideshow: true,
-    slideshowInterval: 5000,
+    slideshowInterval: 2500,
     dots: false,
   });
 
@@ -526,52 +525,6 @@ document.addEventListener(`DOMContentLoaded`, function() {
   }
 
   /* form agree */
-
-  /* scrollspy */
-
-  const changeHeaderClass = (offsets) => {
-    const header = document.querySelector(HEADER);
-    const windowScroll = window.pageYOffset - SCROLL_OFFSET;
-    let isInverse = false;
-
-    for (let i = 0; i < offsets.length; i++) {
-      isInverse = offsets[i][0] <= windowScroll && windowScroll <= offsets[i][1];
-
-      if (isInverse) {
-        break;
-      }
-    }
-
-    if (isInverse) {
-      header.classList.add(HEADER_INVERSE_CLASS);
-    } else {
-      header.classList.remove(HEADER_INVERSE_CLASS);
-    }
-  };
-
-  const onWindowScroll = (offsets) => {
-    changeHeaderClass(offsets);
-  };
-
-  const sectionsForInverse = Array.from(document.querySelectorAll(INVERSE_CLASS));
-
-  const addMultipleEventListeners = (element, events, handler) => {
-    events.forEach((action) => {
-      element.addEventListener(action, handler);
-    });
-  };
-
-  if (sectionsForInverse) {
-    const sectionsOffsets = sectionsForInverse.map((section) => ([section.offsetTop, section.offsetTop + section.offsetHeight]));
-
-    addMultipleEventListeners(
-      window,
-      [`scroll`, `resize`, `load`,],
-      onWindowScroll.bind(null, sectionsOffsets)
-    );
-  }
-
-  /* scrollspy */
 
   /* form select */
 
