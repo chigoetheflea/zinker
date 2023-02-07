@@ -29,9 +29,17 @@
 .footer__menu {
   display: flex;
   margin-top: 15px;
+}
+
+.footer__menu-container {
+  .list-style-none();
+
+  display: flex;
   flex-direction: column;
   gap: 7px;
+}
 
+.footer__menu-item {
   a {
     align-self: flex-start;
     text-decoration: none;
@@ -109,7 +117,7 @@
     }
   }
 
-  .footer__menu {
+  .footer__menu-container {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;

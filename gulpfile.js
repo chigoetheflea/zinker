@@ -3,6 +3,7 @@
 var gulp = require("gulp");
 var plumber = require("gulp-plumber");
 var sourcemap = require("gulp-sourcemaps");
+var replace = require("gulp-replace");
 
 var less = require("gulp-less");
 var postcss = require("gulp-postcss");
@@ -43,7 +44,7 @@ gulp.task("css", function () {
 gulp.task("js", function () {
   return gulp.src([
       "source/js/scripts.js",
-      "source/js/animation.gsap.min.js"],
+      ],
       {
         base: "source/js"
       })
@@ -115,18 +116,25 @@ gulp.task("refresh", function (done) {
   done();
 });
 
-gulp.task("themeBuild", function () {
+gulp.task("cssPathReplace", function () {
   return gulp.src([
-    "build/js/lekbez.js",
-    "build/js/lekbez.min.js",
-    "build/js/animation.js",
-    "build/js/animation.min.js",
-    "build/css/style.css",
-    "build/css/style.min.css"
+    "build/css/style.min.css",
   ], {
     base: "build"
   })
-  .pipe(gulp.dest("../www/wp-content/themes/zinker_2.0/"));
+  .pipe(replace("../fonts", "./assets/fonts"))
+  .pipe(gulp.dest("../theme/assets"));
+});
+
+gulp.task("themeBuild", function () {
+  return gulp.src([
+    "build/js/**",
+    "build/img/**",
+    "build/fonts/**",
+  ], {
+    base: "build"
+  })
+  .pipe(gulp.dest("../theme/assets"));
 });
 
 gulp.task("server", function () {
@@ -153,5 +161,5 @@ gulp.task("build", gulp.series(
   "html"
 ));
 
-// gulp.task("wp", gulp.series("build", "themeBuild"));
+gulp.task("wp", gulp.series("build", "cssPathReplace", "themeBuild"));
 gulp.task("start", gulp.series("build", "server"));
