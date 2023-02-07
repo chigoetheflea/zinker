@@ -115,7 +115,7 @@ gulp.task("refresh", function (done) {
   server.reload();
   done();
 });
-
+/*
 gulp.task("cssPathReplace", function () {
   return gulp.src([
     "build/css/style.min.css",
@@ -125,12 +125,13 @@ gulp.task("cssPathReplace", function () {
   .pipe(replace("../fonts", "./assets/fonts"))
   .pipe(gulp.dest("../theme/assets"));
 });
-
+*/
 gulp.task("themeBuild", function () {
   return gulp.src([
     "build/js/**",
     "build/img/**",
     "build/fonts/**",
+    "build/css/**",
   ], {
     base: "build"
   })
@@ -161,5 +162,5 @@ gulp.task("build", gulp.series(
   "html"
 ));
 
-gulp.task("wp", gulp.series("build", "cssPathReplace", "themeBuild"));
+gulp.task("wp", gulp.series("build", "themeBuild"));
 gulp.task("start", gulp.series("build", "server"));
