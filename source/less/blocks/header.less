@@ -86,20 +86,28 @@
       fill: @red-dark;
     }
   }
+
+  &--active {
+    .header__cart-count {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
 }
 
 .header__cart-count {
   .shadow(@red);
+  .transition();
 
   position: absolute;
-  bottom: -10px;
-  right: -10px;
+  bottom: -8px;
+  right: -8px;
 
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
 
   color: white;
   font-size: 12px;
@@ -107,6 +115,8 @@
 
   border-radius: 50%;
   background-color: @red;
+  opacity: 0;
+  transform: scale(0.2);
 }
 
 .header__columns {

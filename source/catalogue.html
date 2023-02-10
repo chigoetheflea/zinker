@@ -71,12 +71,12 @@
         </div>
 
         <div class="column  header__cart-wrapper  column--1-12">
-          <a href="" class="header__cart" aria-label="Корзина">
+          <a href="" class="header__cart  header__cart--active  js-cart" aria-label="Корзина">
             <svg width="30px" height="30px" focusable="false" aria-hidden="true">
               <use xlink:href="#icon_cart"></use>
             </svg>
 
-            <div class="header__cart-count">3</div>
+            <div class="header__cart-count"></div>
           </a>
         </div>
       </div>
@@ -145,7 +145,17 @@
                 </button>
               </div>
 
-              <button type="submit" class="button  count-form__submit  button--border">В корзину</button>
+              <button type="submit" class="button  count-form__submit  button--border  button--cart  button--loading">
+                <span class="button__text-default">В корзину</span>
+
+                <span class="button__text-loading"></span>
+
+                <span class="button__text-added">
+                  <svg width="20px" height="20px" focusable="false" aria-hidden="true">
+                    <use xlink:href="#icon_check"></use>
+                  </svg>
+                </span>
+              </button>
             </form>
           </article>
         </div>
