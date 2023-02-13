@@ -462,7 +462,16 @@ document.addEventListener(`DOMContentLoaded`, function() {
     });
 
     field.classList.remove(VALIDATE_TRUE_CLASS, VALIDATE_FALSE_CLASS);
-    testingResult ? field.classList.add(VALIDATE_TRUE_CLASS) : field.classList.add(VALIDATE_FALSE_CLASS);
+
+    if (testingResult) {
+      field.classList.add(VALIDATE_TRUE_CLASS);
+    } else {
+      field.classList.add(VALIDATE_FALSE_CLASS);
+
+      setTimeout(() => {
+        field.classList.remove(VALIDATE_FALSE_CLASS);
+      }, 1000);
+    }
 
     return testingResult;
   };

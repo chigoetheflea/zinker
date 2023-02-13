@@ -81,6 +81,7 @@
   display: block;
   width: 30px;
   height: 30px;
+  padding: 0;
 
   background: none;
   border: none;
@@ -100,7 +101,7 @@
   &::before {
     top: 50%;
     left: 0;
-    width: 100%;
+    width: 30px;
     height: 4px;
     transform: translateY(-50%);
   }
@@ -109,7 +110,7 @@
     top: 0;
     left: 50%;
     width: 4px;
-    height: 100%;
+    height: 30px;
     transform: translateX(-50%);
   }
 
@@ -191,6 +192,14 @@
   .modal__close {
     width: 20px;
     height: 20px;
+
+    &::before {
+      width: 20px;
+    }
+
+    &::after {
+      height: 20px;
+    }
   }
 
   .modal {
@@ -200,8 +209,4 @@
   .modal__content-wrapper {
     border-radius: 0;
   }
-}
-
-@media (max-width: @break-point-4) {
-
 }

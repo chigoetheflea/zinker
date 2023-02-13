@@ -311,15 +311,15 @@
 
       <p class="cta__subtitle">Оставьте заявку на обратный звонок, и наш специалист свяжется с вами в течение часа</p>
 
-      <form action="" class="form  cta__form  form--white  form--inline">
-        <div class="form__result">Отправлено!</div>
+      <form action="" class="form  cta__form  form--white  form--inline  js-form">
+        <div class="form__result  js-result">Отправлено!</div>
 
         <div class="form__fields">
-          <input type="text" class="form__input" placeholder="Ваше имя" name="cta_name" id="cta_name_field">
+          <input type="text" class="form__input" placeholder="Ваше имя" name="cta_name" id="cta_name_field" data-validate="true" data-required="true">
 
-          <input type="tel" class="form__input" placeholder="+7 ... ... .. .." name="cta_phone" id="cta_phone_field">
+          <input type="tel" class="form__input  js-masked-input" placeholder="+7 (___) ___-__-__" data-validate="true" data-required="true" data-mask="phone" name="cta_phone" id="cta_phone_field">
 
-          <button type="submit" class="button  button--big  button--white">Оставить&nbsp;заявку</button>
+          <button type="submit" class="button  button--big  button--white  js-submit">Оставить&nbsp;заявку</button>
         </div>
 
         <p class="form__notice  form__notice--center">Нажимая кнопку «Отправить», вы даете согласие на обработку ваших персональных данных</p>

@@ -31,6 +31,12 @@
 
   &--border {
     border: 1px solid @zink;
+
+    .button__text-default,
+    .button__text-loading,
+    .button__text-added {
+      border-radius: 18px;
+    }
   }
 
   &--red {
@@ -48,6 +54,12 @@
       &::after {
         background-color: @red-light;
       }
+
+      .button__text-default,
+      .button__text-loading,
+      .button__text-added {
+        background-color: @red-light;
+      }
     }
 
     &:active {
@@ -55,6 +67,36 @@
 
       &::after {
         background-color: @red-dark;
+      }
+
+      .button__text-default,
+      .button__text-loading,
+      .button__text-added {
+        background-color: @red-dark;
+      }
+    }
+
+    .button__text-default,
+    .button__text-loading,
+    .button__text-added {
+      background-color: @red;
+    }
+
+    .button__text-loading {
+      &::after,
+      &::before {
+        background-color: @red;
+      }
+
+      &::after {
+        border-color: white;
+      }
+    }
+
+    .button__text-added,
+    .button__text-loading {
+      svg {
+        fill: white;
       }
     }
   }
@@ -84,6 +126,12 @@
     padding: 21px 35px;
     font-size: 18px;
     border-radius: 25px;
+
+    .button__text-default,
+    .button__text-loading,
+    .button__text-added {
+      border-radius: 25px;
+    }
   }
 
   &--bottom {
@@ -93,7 +141,6 @@
 
   &--cart {
     position: relative;
-    overflow: hidden;
   }
 
   &--added {
@@ -120,9 +167,20 @@
   }
 }
 
+.button__text-added,
+.button__text-loading {
+  svg {
+    .transition(svg);
+
+    fill: @zink;
+  }
+}
+
 .button__text-default,
 .button__text-loading,
 .button__text-added {
+  .transition();
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -144,45 +202,14 @@
   pointer-events: none;
 }
 
-.button__text-default {
-  z-index: 10;
+.button__text-loading {
+  svg {
+    animation: rotate infinite 1s linear;
+  }
 }
 
-.button__text-loading {
-  z-index: 20;
-
-  &::after,
-  &::before {
-    position: absolute;
-    content: '';
-  }
-
-  &::after {
-    left: 50%;
-    top: 50%;
-    z-index: 10;
-
-    width: 20px;
-    height: 20px;
-
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    border: 3px solid @zink;
-    background-color: #ffffff;
-  }
-
-  &::before {
-    z-index: 20;
-    top: 50%;
-    left: 0;
-
-    width: 100%;
-    height: 4px;
-    margin-top: -2px;
-
-    background-color: #ffffff;
-    animation: rotate infinite 1s;
-  }
+.button__text-default {
+  z-index: 10;
 }
 
 .button__text-added {

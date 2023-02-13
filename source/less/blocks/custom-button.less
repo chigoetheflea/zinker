@@ -1,0 +1,217 @@
+.custom-button {
+    .transition();
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 11px 18px;
+
+    color: @zink;
+    line-height: 1.2;
+    text-decoration: none;
+    font-weight: 900;
+    text-align: center;
+
+    border: none;
+    background: none;
+    border-radius: 18px;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      color: @red;
+      border-color: @red;
+    }
+
+    &:active {
+      color: @red-dark;
+      border-color: @red-dark;
+    }
+
+    &--border {
+      border: 1px solid @zink;
+
+      .custom-button__text-default,
+      .custom-button__text-loading,
+      .custom-button__text-added {
+        border-radius: 18px;
+      }
+    }
+
+    &--red {
+      .shadow(@red);
+
+      z-index: 1;
+      color: white;
+      background-color: @red;
+
+      &:hover,
+      &:focus {
+        background-color: @red-light;
+        color: white;
+
+        &::after {
+          background-color: @red-light;
+        }
+
+        .custom-button__text-default,
+        .custom-button__text-loading,
+        .custom-button__text-added {
+          background-color: @red-light;
+        }
+      }
+
+      &:active {
+        background-color: @red-dark;
+
+        &::after {
+          background-color: @red-dark;
+        }
+
+        .custom-button__text-default,
+        .custom-button__text-loading,
+        .custom-button__text-added {
+          background-color: @red-dark;
+        }
+      }
+
+      .custom-button__text-default,
+      .custom-button__text-loading,
+      .custom-button__text-added {
+        background-color: @red;
+      }
+
+      .custom-button__text-loading {
+        &::after,
+        &::before {
+          background-color: @red;
+        }
+
+        &::after {
+          border-color: white;
+        }
+      }
+
+      .custom-button__text-added,
+      .custom-button__text-loading {
+        svg {
+          fill: white;
+        }
+      }
+    }
+
+    &--white {
+      .shadow(white);
+
+      z-index: 1;
+      color: @red;
+      background-color: white;
+
+      &:hover,
+      &:focus {
+        color: @zink;
+      }
+
+      &:focus {
+        outline: 1px dotted white;
+      }
+
+      &:active {
+        color: @zink-dark;
+      }
+    }
+
+    &--big {
+      padding: 21px 35px;
+      font-size: 18px;
+      border-radius: 25px;
+
+      .custom-button__text-default,
+      .custom-button__text-loading,
+      .custom-button__text-added {
+        border-radius: 25px;
+      }
+    }
+
+    &--bottom {
+      margin-top: 30px;
+      align-self: flex-start;
+    }
+
+    &--cart {
+      position: relative;
+    }
+
+    &--added {
+      .custom-button__text-added {
+        opacity: 1;
+        pointer-events: auto;
+      }
+    }
+
+    &--loading {
+      .custom-button__text-loading {
+        opacity: 1;
+        pointer-events: auto;
+      }
+    }
+
+    &--added,
+    &--loading {
+      pointer-events: none;
+
+      .custom-button__text-default {
+        opacity: 0;
+      }
+    }
+  }
+
+  .custom-button__text-added,
+  .custom-button__text-loading {
+    svg {
+      .transition(svg);
+
+      fill: @zink;
+    }
+  }
+
+  .custom-button__text-default,
+  .custom-button__text-loading,
+  .custom-button__text-added {
+    .transition();
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+    background-color: white;
+  }
+
+  .custom-button__text-loading,
+  .custom-button__text-added {
+    .transition();
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .custom-button__text-loading {
+    svg {
+      animation: rotate infinite 1s linear;
+    }
+  }
+
+  .custom-button__text-default {
+    z-index: 10;
+  }
+
+  .custom-button__text-added {
+    z-index: 30;
+  }
