@@ -2,8 +2,29 @@
   margin-top: 80px;
 }
 
+.application__item {
+  justify-content: center;
+  align-items: flex-start;
+}
+
 @media (max-width: @break-point-2) {
   .application__slider {
     margin-top: 0;
+  }
+}
+
+@media (max-width: @break-point-tablet) {
+  .application__item {
+    max-width: calc((100% - @gap) / 2);
+  }
+
+  .application__title {
+    text-align: left;
+  }
+}
+
+@media (max-width: @break-point-mobile) {
+  .application__item {
+    max-width: 100%;
   }
 }

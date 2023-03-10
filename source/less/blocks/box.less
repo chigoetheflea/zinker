@@ -50,11 +50,17 @@
 
       &:hover,
       &:focus {
-        color: @red;
+        color: white;
+        opacity: @hover-opacity;
       }
 
       &:active {
-        color: @red-light;
+        opacity: @active-opacity;
+      }
+
+      &:focus {
+        outline: 1px dotted white;
+        outline-offset: 3px;
       }
     }
   }
