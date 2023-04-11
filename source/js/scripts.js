@@ -42,13 +42,12 @@ const FORM = `.form`;
 const FORM_VALIDATION = `.js-form`;
 const FORM_RESULT = `.js-result`;
 const FORM_INPUT = `.form__input`;
-const FORM_RESULT_ACTIVE_CLASS = `notification--active`;
-const FORM_RESULT_SUCCESS_CLASS = `notification--green`;
-const FORM_RESULT_ERROR_CLASS = `notification--red`;
+const FORM_RESULT_ACTIVE_CLASS = `form__result--active`;
+const FORM_RESULT_TIMEOUT = 2000;
 const FORM_ALERT_ERROR = `Ошибка отправки!`;
 const FORM_ALERT_SUCCESS = `Отправлено!`;
 const FORM_METHOD = `POST`;
-const FORM_SERVER_URL = ``;
+const FORM_SERVER_URL = (typeof phpHandler !== `undefined` ) ? phpHandler.url : `https://zinker.ru/wp-content/themes/zinker v3.0/lib/mail_handler.php`;
 const FORM_FIELD_DEFAULT_VALUE = ``;
 const FORM_SUBMIT = `.js-submit`;
 const FORM_AGREE = `.js-agree`;
@@ -348,7 +347,6 @@ document.addEventListener(`DOMContentLoaded`, function() {
   const clearForm = (form) => {
     const fields = Array.from(form.querySelectorAll(FORM_INPUT));
     const resultField = form.querySelector(FORM_RESULT);
-    const agreeField = form.querySelector(FORM_AGREE);
     const submitButton = form.querySelector(FORM_SUBMIT);
     let fieldResetValue = FORM_FIELD_DEFAULT_VALUE;
 
@@ -375,34 +373,50 @@ document.addEventListener(`DOMContentLoaded`, function() {
       field.value = fieldResetValue;
     });
 
-    agreeField.checked = false;
     submitButton.disabled = true;
 
-    resultField.classList.remove(FORM_RESULT_ACTIVE_CLASS, FORM_RESULT_SUCCESS_CLASS, FORM_RESULT_ERROR_CLASS);
+    resultField.classList.remove(FORM_RESULT_ACTIVE_CLASS);
   };
 
-  const handleDataLoaded = (form) => {
+  const displayXHRError = (form) => {
+    console.log(`sending error`);
+
     const resultField = form.querySelector(FORM_RESULT);
-
-    resultField.textContent = FORM_ALERT_SUCCESS;
-    resultField.classList.add(FORM_RESULT_ACTIVE_CLASS, FORM_RESULT_SUCCESS_CLASS);
-
-    setTimeout(clearForm.bind(null, form), 2000);
-  };
-
-  const handleDataFailed = (form) => {
-    const resultField = form.querySelector(FORM_RESULT);
-
     resultField.textContent = FORM_ALERT_ERROR;
-    resultField.classList.add(FORM_RESULT_ACTIVE_CLASS, FORM_RESULT_ERROR_CLASS);
+    resultField.classList.add(FORM_RESULT_ACTIVE_CLASS);
+
+    setTimeout(() => {
+      resultField.classList.remove(FORM_RESULT_ACTIVE_CLASS);
+    }, FORM_RESULT_TIMEOUT);
+  };
+
+  const displayXHRSuccess = (form) => {
+    console.log(`send`);
+
+    const resultField = form.querySelector(FORM_RESULT);
+    resultField.textContent = FORM_ALERT_SUCCESS;
+    resultField.classList.add(FORM_RESULT_ACTIVE_CLASS);
+
+    setTimeout(clearForm.bind(null, form), FORM_RESULT_TIMEOUT);
   };
 
   const sendFormData = (form) => {
     const xhr = new XMLHttpRequest();
     const formData = new FormData(form);
 
-    xhr.addEventListener(`load`, handleDataLoaded.bind(null, form));
-    xhr.addEventListener(`error`, handleDataFailed.bind(null, form));
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === XMLHttpRequest.DONE) {
+        if (xhr.status === 200) {
+          displayXHRSuccess(form);
+        } else {
+          displayXHRError(form);
+        }
+      }
+    };
+
+    xhr.onerror = function() {
+      displayXHRError(form);
+    };
 
     xhr.open(FORM_METHOD, FORM_SERVER_URL);
     xhr.send(formData);

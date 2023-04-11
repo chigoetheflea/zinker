@@ -88,6 +88,23 @@
   display: none !important;
 }
 
+.woocommerce-error,
+.woocommerce-info,
+.woocommerce-message {
+  padding: 15px 30px !important;
+  margin: 0 0 30px 0 !important;
+
+  color: @zink !important;
+
+  background-color: @zink-light !important;
+  border: none !important;
+  border-radius: 20px;
+
+  &::before {
+    display: none !important;
+  }
+}
+
 @media (max-width: @break-point-1) {
   .wp-image-wrap {
     border-radius: 40px;

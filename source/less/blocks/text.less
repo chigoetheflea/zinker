@@ -11,4 +11,21 @@
   &--margin-bottom {
     margin-bottom: 30px;
   }
+
+  &--red {
+    color: @red;
+
+    a {
+      color: @red;
+
+      &:hover,
+      &:focus {
+        color: @red-light;
+      }
+
+      &:active {
+        color: @red-dark;
+      }
+    }
+  }
 }

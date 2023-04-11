@@ -13,6 +13,14 @@
       }
     }
   }
+
+  &--logotype {
+    .doc__wrapper {
+      img {
+        border: none;
+      }
+    }
+  }
 }
 
 .doc__wrapper {
@@ -38,10 +46,21 @@
   margin: 0;
 }
 
+.doc__link {
+  align-self: flex-start;
+  margin-top: 15px;
+}
+
 @media (max-width: @break-point-3) {
   .doc {
     flex-direction: column;
     gap: 30px;
+
+    &--logotype {
+      .doc__wrapper {
+        border: none;
+      }
+    }
   }
 }
 
@@ -49,5 +68,11 @@
   .doc {
     border-radius: 20px;
     padding: 20px;
+  }
+}
+
+@media (max-width: @break-point-mobile) {
+  .doc__link {
+    align-self: center;
   }
 }
