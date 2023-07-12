@@ -79,6 +79,8 @@ const VIDEO = `.js-video`;
 const VIDEO_BUTTON = `.js-video-button`;
 const VIDEO_BUTTON_ACTIVE_CLASS = `video-button--active`;
 
+const MASK_DEFAULT = `phone`;
+
 const Test = {
   REQUIRED: `required`,
   PHONE: `phone`,
@@ -403,6 +405,7 @@ document.addEventListener(`DOMContentLoaded`, function() {
   const sendFormData = (form) => {
     const xhr = new XMLHttpRequest();
     const formData = new FormData(form);
+    const callback = form.dataset.callback;
 
     xhr.onreadystatechange = function() {
       if (xhr.readyState === XMLHttpRequest.DONE) {
@@ -420,6 +423,10 @@ document.addEventListener(`DOMContentLoaded`, function() {
 
     xhr.open(FORM_METHOD, FORM_SERVER_URL);
     xhr.send(formData);
+
+    if (callback) {
+      eval(callback);
+    }
   };
 
   /* __ form sending */
@@ -620,7 +627,11 @@ document.addEventListener(`DOMContentLoaded`, function() {
 
   if (formMasks) {
     formMasks.map((formMask) => {
-      const maskType = formMask.dataset.mask;
+      if (formMask.localName != `input`) {
+        formMask = formMask.querySelector(`input`);
+      }
+
+      const maskType = (formMask.dataset.mask) ? formMask.dataset.mask : MASK_DEFAULT;
 
       MaskTemplates[maskType].mask(formMask);
     });
