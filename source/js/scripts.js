@@ -375,7 +375,7 @@ document.addEventListener(`DOMContentLoaded`, function() {
       field.value = fieldResetValue;
     });
 
-    submitButton.disabled = true;
+    submitButton.disabled = false;
 
     resultField.classList.remove(FORM_RESULT_ACTIVE_CLASS);
   };
@@ -514,11 +514,20 @@ document.addEventListener(`DOMContentLoaded`, function() {
       result => sendFormData(formToCheck),
       error => console.log(`no`)
     );
+
+    changeSubmitAvailability(formToCheck);
+  };
+
+  const changeSubmitAvailability = (form) => {
+    const formSubmit = form.querySelector(FORM_SUBMIT);
+
+    formSubmit.disabled = !formSubmit.disabled;
   };
 
   const handleFormSubmit = (form, evt) => {
     evt.preventDefault();
 
+    changeSubmitAvailability(form);
     checkForm(form);
   };
 
@@ -529,32 +538,6 @@ document.addEventListener(`DOMContentLoaded`, function() {
   }
 
   /* __ form check */
-
-  /* form agree */
-
-  const changeSubmitAvailability = (checkbox) => {
-    const formSubmit = document.querySelector(FORM_SUBMIT);
-
-    formSubmit.disabled = !checkbox.checked;
-  };
-
-  const handleFormAgreeClick = (evt) => {
-    changeSubmitAvailability(evt.target);
-  };
-
-  if (form) {
-    const formAgreeField = form.querySelector(FORM_AGREE);
-
-    if (formAgreeField) {
-      formAgreeField.addEventListener(`click`, handleFormAgreeClick);
-    } else {
-      const formSubmit = document.querySelector(FORM_SUBMIT);
-
-      formSubmit.disabled = false;
-    }
-  }
-
-  /* form agree */
 
   /* form select */
 
